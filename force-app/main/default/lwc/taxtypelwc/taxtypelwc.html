@@ -1,0 +1,163 @@
+<template>
+    <lightning-card>
+        <div class="topnav">
+            <a class="active" href="https://login.salesforce.com/?locale=in"><img src="https://intelogikcom-a0-dev-ed--c.vf.force.com/resource/1685616254000/radiantlogo?" height="100px" width="100px"/></a>
+            <a class="sign" href="https://www.google.com">Sign In</a>
+            <lightning-input class="search" placeholder="Search Here..."></lightning-input>
+          </div>
+        <div class="slds-p-around_medium">
+
+       
+        <lightning-layout>
+            <lightning-layout-item>
+                <div class="navigation">
+                <lightning-vertical-navigation  selected-item="home" onselect={changeHandleAction}   >
+                        <lightning-vertical-navigation-section>
+                            <lightning-vertical-navigation-item class="home" label="Home " name="home"></lightning-vertical-navigation-item >
+                            <lightning-vertical-navigation-item class="taxtype" label="Tax_Type_Name__c" name="taxtype"></lightning-vertical-navigation-item>
+                            <lightning-vertical-navigation-item class="descri" label="Description__c" name="description"></lightning-vertical-navigation-item>
+                            <lightning-vertical-navigation-item  class="taxrate" label="Tax_Rate__c" name="taxrate"></lightning-vertical-navigation-item>
+                            <lightning-vertical-navigation-item  class="taxtypes" label="Tax_Types__c" name="taxtypes"></lightning-vertical-navigation-item>
+                        </lightning-vertical-navigation-section>     
+                </lightning-vertical-navigation>
+            </div>
+            </lightning-layout-item>
+<!--carousal-->
+
+
+
+
+<!--caurosal end here-->
+
+            
+            <div class="imagess">
+                <!--<h2 class="slds-section-title--divider" style="background:#eee; margin-bottom:10px;"><strong>You Are Viewing: <span style="color:#0000ff;">{currentContent}</span></strong></h2>-->
+                <template if:true={homeclick}>                      
+                    <div class="tabContent">                        
+                       <img src="https://radiant49-dev-ed--c.develop.vf.force.com/resource/1686074873000/Tax?"/>   
+                    </div>
+                </template>
+
+                <template if:true={typevalue}>                      
+                    <div class="tabContent">                        
+                        <div class="postImage">	
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    
+                                        <template if:true={searchresults}>
+                                         <template for:each={searchresults} for:item="Tax">
+                                             <lightning-card title="show record" key={tax.Id}>
+                                     
+                                                 <lightning-record-edit-form  object-api-name="Tax__c"
+                                                 record-id={tax.Id}
+                                                
+                                                 >
+                                                 <lightning-input-field field-name="Name" value={Tax.Name}> </lightning-input-field>
+                                                 <lightning-input-field field-name="Tax_Types__c" value={tax.Tax_Types__c}> </lightning-input-field>
+                                                 <lightning-input-field field-name="Description__c" value={tax.Description__c}> </lightning-input-field>
+                                                 <lightning-button variant="brand" type="submit" onclick={updateHandler} label="Save">
+                                                 </lightning-button>
+                                                 <lightning-button variant="brand" onclick={resethandler} label="cancel">
+                                                 </lightning-button>
+                                        </lightning-record-edit-form>
+                                     
+                                            
+                                             </lightning-card>
+                                     
+                                            
+                                     </template>
+                                     </template>
+                                     
+                                     <template if:false={searchresults}>
+                                         <lightning-record-form object-api-name="Tax__c"
+                                         onsuccess={successhandler}
+                                         layout-type="full"
+                                         >
+             
+                                         </lightning-record-form>
+                                     </template>
+                                </div>
+                                <div class="slds-col">
+                                    <lightning-card title="Search here"> 
+                                        <div class="abc">
+                                            <lightning-input label="Enter the text" onchange={changeHandler} value={datas} required="true"></lightning-input>
+                                            <lightning-button label="search Here"  variant="brand" onclick={searchRecord} ></lightning-button>
+                                                    </div>
+                                       </lightning-card>
+                                </div>
+                                </div>     
+                        </div> 
+                       
+                    </div>
+                </template>
+     
+                <template if:true={rateValue}>
+                    <div class="tabContent" >                        
+                        <div class="postImage">					
+                            
+                                <img src="https://radiant49-dev-ed--c.develop.vf.force.com/resource/1685988052000/TaxRate?"/> 
+                                 
+                          
+                        </div> 
+                        
+                    </div>
+                </template>
+     
+               
+                <template if:true={typeValue}>
+                    <div class="tabContent" >                        
+                        <div class="postImage">					
+        
+                                <img src="https://radiant49-dev-ed--c.develop.vf.force.com/resource/1685987697000/TaxTypeName?"/> 
+                            
+                          
+                        </div> 
+                        
+                    </div>
+                </template>
+     
+                
+                
+                
+     
+            </div>
+        </lightning-layout>
+    </div>
+
+    <footer>
+        <div class="slds-grid">
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <div style="width: 50%; display:inline-block">
+                    <ul style="list-style-type: square; font-size: 16px; margin: 0 0 0 54px; padding: 0;color:black"> 
+                        <li><a style="color: rgb(29, 15, 222);">About Us</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Terms Of Use</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Contact Us</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Site Map</a></li>
+                    </ul>
+                </div>
+              </span>
+            </div>
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <div style="width: 50%; display:inline-block">
+                    <ul style="list-style-type: square; font-size: 16px; margin: 0 0 0 54px; padding: 0;"> 
+                        <li><a style="color: rgb(29, 15, 222);">Accessibility</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Languages</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Privacy Policy</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Press Room</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Blogs</a></li>
+                       
+                       
+                    </ul>
+                </div>
+                
+            </span>
+            </div>
+          </div>
+      </footer>
+
+
+
+    </lightning-card>
+</template>
