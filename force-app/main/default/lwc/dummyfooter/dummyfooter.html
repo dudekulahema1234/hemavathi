@@ -1,0 +1,203 @@
+<template>
+    <lightning-card>
+        <div class="topnav">
+            <a class="active" href="https://login.salesforce.com/?locale=in"><img src="https://intelogikcom-a0-dev-ed--c.vf.force.com/resource/1685616254000/radiantlogo?" height="100px" width="100px"/></a>
+            <a class="sign" href="https://www.google.com">Sign In</a>
+            <lightning-input class="search" placeholder="Search Here..."></lightning-input>
+          </div>
+        <div class="slds-p-around_medium">
+        <lightning-layout>
+            <lightning-layout-item>
+                <div class="navigation">
+                <lightning-vertical-navigation  selected-item="home" onselect={changeHandleAction}   >
+                        <lightning-vertical-navigation-section>
+                            <lightning-vertical-navigation-item class="home" label="Home " name="home"></lightning-vertical-navigation-item >
+                                <lightning-vertical-navigation-item class="taxtype" label="TaxTypeName" name="taxtype"></lightning-vertical-navigation-item>
+                                <lightning-vertical-navigation-item class="descri" label="Description" name="description"></lightning-vertical-navigation-item>
+                                <lightning-vertical-navigation-item  class="taxrate" label="TaxRate" name="taxrate"></lightning-vertical-navigation-item>
+                                <lightning-vertical-navigation-item  class="taxtypes" label="TaxTypes" name="taxtypes"></lightning-vertical-navigation-item>
+                        </lightning-vertical-navigation-section>     
+                </lightning-vertical-navigation>
+            </div>
+            </lightning-layout-item>
+
+            <div class="imagess">
+                <template if:true={homeclick}>                      
+                    <div class="tabContent">                        
+                       <img src="https://radiant49-dev-ed--c.develop.vf.force.com/resource/1686074873000/Tax?"/>   
+                    </div>
+                </template>
+
+                <template if:true={typevalue}>                      
+                    <div class="tabContent">                        
+                        <div class="postImage">	
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <!--lmsComponentX-->  
+                                        <c-lms-component-x></c-lms-component-x>
+                                    <!--start here-->
+                                </div>
+                            <div class="slds-col">
+                                    <!--lmsComponentA-->
+                                        <c-lms-component-a></c-lms-component-a>
+                                    <!---end search here-->
+                            </div>
+                                </div>     
+                        </div>    
+                    </div>
+                </template>
+                
+                
+                <template if:true={typeValue}>
+                    <div class="tabContent" >                        
+                        <div class="postImage">					
+                                <img src="https://radiant49-dev-ed--c.develop.vf.force.com/resource/1685987697000/TaxTypeName?"/>   
+                        </div> 
+                        
+                    </div>
+                </template>
+            </div>
+        </lightning-layout>
+    </div>
+    
+    <!--<footer>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                
+        <div class="main-content">
+            <div class="left box">
+                <h2>About us</h2>
+                <div class="content">
+
+<p >Taj Hotels is a chain of luxury hotels and a subsidiary of the Indian Hotels Company Limited,headquartered in Mumbai,
+     India.Incorporated by Jamsetji Tata in 1902,the company is apart of the Tata Group.
+     The company employed over 20,000 people in the year 2010.
+     Thecompany has been ranked as the World’s Strongest Hotel Brand in 2022and India’sStrongest Brand as per Brand Finance Hotels 50 Report 2022 and India 100 Report 2020,2022and 2023.</p>
+     <div class="social">
+    <a href = "#" ></a><span class="fab fa-facebook-f"></span>
+    <a href = "#" ></a><span class="fab fa-twitter"></span>
+    <a href = "#" ></a><span class="fab fa-instagram"></span>
+    <a href = "#" ></a><span class="fab fa-youtube"></span>
+     </div>
+     </div>
+     </div>
+    
+    </div>
+</div>
+</div>
+
+<div class="slds-col">
+     <div class="center box">
+        <h2 > Address</h2>
+        <div class="content">
+            <div class="place">
+        <span class="fas fa-map-marker-alt"></span>
+        <span class="text">Kalamandhir, radiant semiconductor</span>
+        </div>
+        <div class="phone">
+            <span class="fas fa-phone-alt"></span>
+            <span class="text">+089-765432100</span>
+            </div>
+        </div>
+    </div>
+    
+        
+            <div class="email">
+                <span class="fas fa-envelope"></span>
+                <span class="text">abc@example.com</span>
+                
+            </div>
+        </div>
+        
+        <div class="slds-col">
+<div class="right box">
+    <h2>Contact us</h2>
+    <div class="content">
+        
+            <div class="email"></div>
+        </div>
+    </div>
+        <div class= "text">Email *</div>
+        <input type="email" required>
+        
+        <div class="msg">
+            <div class= "text">Message *</div>
+            <textarea rows="2" cols="25" required></textarea>
+        </div>
+    
+        <div class="btn">
+            <button type="submit">Send</button>
+        </div>
+    </div>
+        
+            
+    </footer>-->
+    <!--<footer>
+        <div class="slds-grid">
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <div style="width: 50%; display:inline-block">
+                    <ul style="list-style-type: square; font-size: 16px; margin: 0 0 0 54px; padding: 0;color:black"> 
+                        <li><a style="color: rgb(29, 15, 222);">About Us</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Terms Of Use</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Contact Us</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Site Map</a></li>
+                    </ul>
+                </div>
+              </span>
+            </div>
+            <div class="slds-col slds-p-horizontal_medium">
+              <span>
+                <div style="width: 50%; display:inline-block">
+                    <ul style="list-style-type: square; font-size: 16px; margin: 0 0 0 54px; padding: 0;"> 
+                        <li><a style="color: rgb(29, 15, 222);">Accessibility</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Languages</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Privacy Policy</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Press Room</a></li>
+                        <li><a style="color: rgb(29, 15, 222);">Blogs</a></li>  
+                    </ul>
+                </div> 
+            </span>
+            </div>
+          </div>
+      </footer>-->
+     <footer>
+        <div class="slds-grid slds-gutters">
+            <div  class="slds-col slds-size_4-of-12">
+            <b><h1 style="font-size: 20px;">About Us </h1></b><br>
+
+            <p >Taj Hotels is a chain of luxury hotels and a subsidiary of the Indian Hotels Company 
+                Limited,headquartered in Mumbai,  India.Incorporated by Jamsetji Tata in 1902,the company 
+                is apart of the Tata Group.
+                The company employed over 20,000 people in the year 2010.
+                Thecompany has been ranked as the World’s Strongest Hotel 
+                Brand in 2022and India’sStrongest Brand as per Brand Finance Hotels 50 Report 2022 and India
+                 100 Report 2020,2022and 2023.</p>
+
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <b><h1 style="font-size: 20px;">Address</h1></b><br>
+                <span class="text">Kalamandhir, radiant semiconductor</span><br>
+                <span class="text">+089-765432100</span><br>
+                <span class="text">abc@example.com</span><br>
+                
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <b><h1 style="font-size: 20px;">Contact us</h1></b>
+                <div class= "text">Email *</div>
+        <input type="email" required>
+        
+        <div class="msg">
+            <div class= "text">Message *</div>
+            <textarea rows="2" cols="25" required></textarea>
+        </div>
+    
+        <div class="btn">
+            <button type="submit">Send</button>
+        </div>
+            </div>
+            </div>
+        </footer>
+      
+</lightning-card>
+</template>

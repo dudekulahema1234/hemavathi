@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Sales Data Table">
+        <div class="slds-scrollable">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <template for:each={dates} for:item="date">
+                            <th key={date}>{date}</th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={months} for:item="month">
+                        <tr key={month}>
+                            <th>{month}</th>
+                            <!--<template for:each={dates} for:item="date">
+                                <td key= {month + date}>{salesData[month][date]}
+
+                                </td>
+                            </template>-->
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

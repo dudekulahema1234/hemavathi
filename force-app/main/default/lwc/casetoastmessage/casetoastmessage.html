@@ -1,0 +1,32 @@
+<template>
+    <lightning-card  title="Case">
+        <div>
+           <!-- <lightning-carousel-image
+            src={https://radiant49-dev-ed--c.develop.vf.force.com/resource/1685962770000/car?}
+            header="Fantastic product 1"
+            description="Fantastic product image in a zip file"
+            alternative-text="Fantastic product 1"
+        >-->
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                A text input field with placeholder text.
+            </h2>
+    
+            <!-- Default/basic -->
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="search here" placeholder="search here..."></lightning-input>
+            </div>
+        </div>
+        <!--</lightning-carousel-image>-->
+            <lightning-record-edit-form object-api-name={ObjectApiName}> 
+                <lightning-input-field field-name={Origin}> </lightning-input-field>
+                <lightning-input-field field-name={Status}> </lightning-input-field>
+                <lightning-input-field field-name={Subject}> </lightning-input-field>
+                <lightning-input-field field-name={Description}> </lightning-input-field>
+                    <lightning-button variant="brand" label="Save" type="submit" onclick={createRecord}>
+                </lightning-button>
+            </lightning-record-edit-form>
+        </div>
+        
+    </lightning-card>
+    </template>

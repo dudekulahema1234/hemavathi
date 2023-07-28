@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="LWC INPUT TYPES DEMO" icon-name="standard:account">
+<lightning-input type="text" label="Scored Marks" value={gainedscoreVar} onchange={fetchGainedscore}></lightning-input>
+{gainedscoreVar}<br/>
+<lightning-input type="date" label="Date" onchange={renderDateFunc}></lightning-input>
+{dateValue}<br/>
+<lightning-input type="datetime" label="Date Time" onchange={renderDateTimeFunc}></lightning-input>
+{dateTimeValue}<br/>
+<lightning-input type="color" label="pick color" onchange={renderColorFunc}></lightning-input>
+{colorValue}<br/>
+<lightning-input type="file" label="select a file" onchange={selectFileFunc}></lightning-input>    
+{filePathValue}
+</lightning-card>
+    
+</template>

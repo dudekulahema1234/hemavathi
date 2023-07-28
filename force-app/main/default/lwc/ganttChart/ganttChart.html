@@ -1,0 +1,34 @@
+<template>
+    <div class="gantt-chart">
+      <!-- Month-wise Gantt Chart -->
+      <div class="chart-container">
+        <div class="chart-header">Month-wise</div>
+        <div class="chart">
+          <!-- Render the month labels dynamically -->
+          <template for:each={months} for:item="month">
+            <div key={month} class="month-label">{month}</div>
+          </template>
+          <!-- Render the bars representing sales data dynamically -->
+          <template for:each={monthlyData} for:item="data">
+            <div key={data.month} class="bar" style="width: {data.width}%; background-color: {data.color}"></div>
+          </template>
+        </div>
+    </div>
+
+    <!-- Week-wise Gantt Chart -->
+    <div class="chart-container">
+      <div class="chart-header">Week-wise</div>
+      <div class="chart">
+        <!-- Render the week labels dynamically -->
+        <template for:each={weeks} for:item="week">
+          <div key={week} class="week-label">{week}</div>
+        </template>
+        <!-- Render the bars representing sales data dynamically -->
+        <template for:each={weeklyData} for:item="data">
+          <div key={data.week} class="bar" style="width: {data.width}%; background-color: {data.color}"></div>
+        </template>
+    </div>
+</div>
+</div>
+</template>
+

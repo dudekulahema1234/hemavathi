@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="LWC INPUT TYPES DEMO " icon-name="custom:visitor_management__c">
+<lightning-input type="text" label="ENTER NAME" value={gainednameVar} onchange={fetchGainedname}></lightning-input>
+   {gainednameVar}<br/>
+   <lightning-input type="mobilenumber" label="ENTER MOBILE NUMBER" onchange={RenderMobilNumberFunc}></lightning-input>
+{MobileNumberValue}<br/>
+<lightning-input type="email" label="ENTER EMAIL" onchange={RenderEmailFunc}></lightning-input>
+{EmailValue}<br/>
+<lightning-input type="look-up" label="MEATING PERSON" onchange={RenderMeatingPersonFunc}></lightning-input>
+{MeatingPersonValue}<br/>
+<lightning-input type="checkbox" label="VISITING PERSON" onchange={RenderVisitingPersonFunc}></lightning-input>
+{VisitingPersonValue}<br/>
+<lightning-button label="SUBMIT" title="save" onclick={saveFunc}></lightning-button>
+{SubmitValue}
+</lightning-card>
+</template>

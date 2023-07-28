@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class="topnav">
+            <a class="active" href="https://login.salesforce.com/?locale=in"><img src="https://intelogikcom-a0-dev-ed--c.vf.force.com/resource/1685616254000/radiantlogo?" height="100px" width="100px"/></a>
+            <a class="sign" href="https://www.google.com">Sign In</a>
+          <lightning-input class="search" placeholder="Search Here..."
+        value={searchKey} 
+        onchange={handelSearchKey}>
+        </lightning-input>
+        </div>
+        <div class="slds-p-around_medium">
+</div>
+     
+</lightning-layout-item>
+    <lightning-layout-item size="2" padding="around-small">
+    <lightning-button label="Search" variant="brand" onclick={SearchAccountHandler}>
+    </lightning-button>
+</lightning-layout-item>
+    </lightning-card>
+</template>

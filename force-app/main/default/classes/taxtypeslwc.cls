@@ -1,11 +1,17 @@
 public class taxtypeslwc {
     
-    @AuraEnabled
+  /*  @AuraEnabled
     public static List<Tax__c> getaxes(string searchName)
     {
         List<Tax__c> taxList = [select id,Tax_Type_Name__c,Description__c,Tax_Rate__c from Tax__c
                                     where Tax_Type_Name__c like : searchName+'%'with Security_Enforced ];
            return taxList;    
                                 
-    }
+    }*/
+    @AuraEnabled(cacheable=true)
+    public static List<Tax__c> getaxesone()
+    {
+        List<Tax__c> taxList = [select id,Tax_Type_Name__c,Name,Description__c,Code__c,Tax_Rate__c from Tax__c ];
+           return taxList;    
+}
 }

@@ -44,7 +44,7 @@
                             <div class="slds-grid slds-gutters">
                                 <div class="slds-col">
                                     
-                                        <template if:true={searchresults}>
+                                       <!-- <template if:true={searchresults}>
                                          <template for:each={searchresults} for:item="Tax">
                                              <lightning-card title="show record" key={tax.Id}>
                                      
@@ -66,16 +66,17 @@
                                      
                                             
                                      </template>
-                                     </template>
+                                     </template>-->
                                      
-                                     <template if:false={searchresults}>
+                                     <!--<template if:false={searchresults}>
                                          <lightning-record-form object-api-name="Tax__c"
                                          onsuccess={successhandler}
                                          layout-type="full"
                                          >
              
                                          </lightning-record-form>
-                                     </template>
+                                     </template>-->
+                                     <c-tax-search-by-filter></c-tax-search-by-filter>
                                 </div>
                                 <div class="slds-col">
                                     <lightning-card title="Search here"> 

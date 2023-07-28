@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <template if:true={recievedMessage}>
+            <lightning-record-edit-form 
+            object-api-name="Tax__c"
+            record-id={recievedMessage}
+        >
+            <lightning-input-field field-name="Name"> </lightning-input-field>
+            <lightning-input-field field-name="Description__c"> </lightning-input-field>
+            <lightning-input-field field-name="Code__c"> </lightning-input-field>
+            <lightning-input-field field-name="Tax_Type_Name__c"> </lightning-input-field>
+            <div class="slds-var-m-top_medium">
+                <lightning-button variant="brand" type="submit" label="Save" onclick={updateHandler} class="slds-m-left_x-small">
+                </lightning-button>
+        
+                <lightning-button variant="brand"  label="cancel" onclick={resethandler} class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+                </lightning-record-edit-form>
+        </template>
+        <template if:false={recievedMessage}>
+            <lightning-record-form object-api-name="Tax__c"
+    onsuccess={successhandler}
+    layout-type="full"
+    >
+
+    </lightning-record-form>
+        </template>
+    </lightning-card>
+
+
+</template>
